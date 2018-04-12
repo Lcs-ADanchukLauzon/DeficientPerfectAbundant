@@ -8,10 +8,68 @@
 
 import Foundation
 
-// Get the user input
-var rawInput = readLine()
 
-// Print out the input provided
-print("You said:")
-print(rawInput)
+// A way of extracting the input once it has been validified
+var givenInt = 0
+
+// infinite loop (technically)
+while 1 == 1 {
+    
+    // Checks for nil
+    guard let givenInput = readLine() else {
+        continue
+    }
+    
+    // checks if input is a number
+    guard let intInput = Int(givenInput) else {
+        continue
+    }
+    
+    // checks if the number input is in the correct range
+    if intInput < 1 || intInput > 32500 {
+        continue
+    }
+    
+    // if the loop gets this far the input is put into a variable and the loop breaks (stops)
+    givenInt = intInput
+    break
+}
+
+
+// variable to keep track off the sum of proper divisors
+var properDivisorTotal = 0
+
+// goes through all the numbers form 1 up to the given Int to find all the proper divisors
+for i in 1...givenInt - 1 {
+    
+    if givenInt % i == 0 {
+        properDivisorTotal += i
+    }
+}
+
+
+// comparing the total of the divisors to the number to determine what kind of number it is.
+
+if properDivisorTotal < givenInt {
+    print("\(givenInt) is deficient")
+} else if properDivisorTotal > givenInt {
+    print("\(givenInt) is abundant")
+} else if properDivisorTotal == givenInt {
+    print("\(givenInt) is a perfect number")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
