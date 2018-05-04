@@ -35,6 +35,7 @@ while 1 == 1 {
     break
 }
 
+// if the intput is one the output is debatable so the output is deficient
 if givenInt == 1 {
     print("\(givenInt) is a deficient number")
     exit(9)
