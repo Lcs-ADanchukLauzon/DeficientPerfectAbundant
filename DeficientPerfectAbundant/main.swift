@@ -35,6 +35,11 @@ while 1 == 1 {
     break
 }
 
+if givenInt == 1 {
+    print("\(givenInt) is a deficient number")
+    exit(9)
+}
+
 
 // variable to keep track off the sum of proper divisors
 var properDivisorTotal = 0
@@ -51,9 +56,9 @@ for i in 1...givenInt - 1 {
 // comparing the total of the divisors to the number to determine what kind of number it is.
 
 if properDivisorTotal < givenInt {
-    print("\(givenInt) is deficient")
+    print("\(givenInt) is a deficient number")
 } else if properDivisorTotal > givenInt {
-    print("\(givenInt) is abundant")
+    print("\(givenInt) is an abundant number")
 } else if properDivisorTotal == givenInt {
     print("\(givenInt) is a perfect number")
 }
